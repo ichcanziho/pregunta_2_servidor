@@ -16,3 +16,6 @@ Framework: Flask
 
 Instalar dependencias: pip install -r requirements.txt
 
+Primer paso: Ejecutar el servidor (main.py)
+
+Segundo paso: Para probar el api ejecutar el código (post_request)
