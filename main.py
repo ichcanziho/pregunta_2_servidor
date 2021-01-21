@@ -1,20 +1,15 @@
 from flask import Flask, request, json
-import pprint
 
 app = Flask(__name__)
 
 
 @app.route('/api/echo', methods=['GET', 'POST', 'DELETE', 'PUT'])
 def add():
-    data = request.get_json()
-    print("HEADERS:")
-    pp = pprint.PrettyPrinter(depth=4)
-    pp.pprint(data.get("headers", {"not": "info"}))
-    print()
-    print("BODY:")
-    pp.pprint(data.get("json", {"not": "info"}))
-    print()
-    print("METHOD:")
+    print("HEADERS: ")
+    print(request.headers)
+    print("BODY: ")
+    print(request.get_data().decode("utf-8"))
+    print("Method:")
     print(request.method)
 
     data = {"mensaje": "recibido"}
